@@ -1,0 +1,70 @@
+#attendee-data-editor-backscreen {
+	background: rgba( 0, 0, 0, 0.8 );
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 100000;
+}
+
+#attendee-data-editor-space {
+	background: #eaeaea;
+	border: 1px solid #222;
+	bottom: 10%;
+	left: 10%;
+	padding: 0.5rem 0.7rem;
+	position: fixed;
+	top: 10%;
+	right: 10%;
+	z-index: 1000000;
+}
+
+#attendee-data-editor-space > .close {
+	display: inline-block;
+	float: right;
+	padding: 0.2rem;
+}
+
+#attendee-data-editor-space > .close:hover {
+	background: #ddd;
+	cursor: pointer;
+}
+
+#attendee-data-editor-space .inner .attendee-meta.toggle.show {
+	display: none;
+}
+
+#attendee-data-editor-space .inner .attendee-meta-row .tribe-tickets-meta {
+	display: block;
+	font-family: sans-serif;
+	margin: 1rem 1rem 2rem;
+}
+
+#attendee-data-editor-space .inner .attendee-meta-row .tribe-tickets-meta label:first-child,
+#attendee-data-editor-space .inner .attendee-meta-row .tribe-tickets-meta header {
+	color: #333;
+	display: block;
+	font-weight: bold;
+	margin-bottom: 0.36rem;
+}
+
+#attendee-data-editor-space .inner.working .attendee-meta-row .tribe-tickets-meta label:first-child,
+#attendee-data-editor-space .inner.working .attendee-meta-row .tribe-tickets-meta header {
+	color: #777;
+}
+
+#attendee-data-editor-space .inner .attendee-meta-row .tribe-tickets-meta label.tribe-tickets-meta-field-header {
+	display: block;
+}
+
+#attendee-data-editor-space .inner > button.save.button {
+	margin-left: 1rem;
+}
+
+#attendee-data-editor-space .inner strong.successful-update {
+	color: #20a030;
+	left: 1rem;
+	position: relative;
+	top: 0.3rem;
+}
