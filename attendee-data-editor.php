@@ -2,7 +2,7 @@
 /**
  * Plugin name: Attendee Data Editor
  * Description: Adds tools to edit or add attendee data from the admin attendee screen, building on facilities already provided by Event Tickets Plus.
- * Version:     1.1
+ * Version:     1.2
  * Author:      Modern Tribe, Inc (Support Team)
  * Author URI:  https://theeventscalendar.com
  * License:     GPLv3

@@ -156,7 +156,7 @@ class Tribe__Tickets__Attendee_Data_Editor__Main {
 		$product_id = absint( $_POST['product_id' ] );
 		$attendee_id = absint( $_POST['attendee_id' ] );
 
-		parse_str( urldecode( $_POST['fields'] ), $fields );
+		parse_str( $_POST['fields'], $fields );
 		$to_commmit = array();
 
 		if ( ! is_array( $fields ) || count( $fields ) !== 1 ) {
