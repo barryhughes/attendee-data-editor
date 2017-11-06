@@ -1,6 +1,7 @@
 <?php
 class Tribe__Tickets__Attendee_Data_Editor__Main {
 	protected $plugin_url = '';
+	protected $assets_enqueued = 0;
 
 	public function __construct( $plugin_url ) {
 		if ( ! class_exists( 'Tribe__Tickets_Plus__Main' ) ) {
@@ -11,11 +12,25 @@ class Tribe__Tickets__Attendee_Data_Editor__Main {
 
 		add_action( 'wp_ajax_load_attendee_data_editor_form', array( $this, 'editor_content' ) );
 		add_action( 'wp_ajax_save_attendee_data_editor_form', array( $this, 'save_fields' ) );
-		add_action( 'load-tribe_events_page_tickets-attendees', array( $this, 'assets' ) );
+		add_action( 'admin_init', array( $this, 'add_assets' ) );
 		add_filter( 'tribe_events_tickets_attendees_table_column', array( $this, 'add_edit_link' ), 20, 3 );
 	}
 
-	public function assets() {
+	public function add_assets() {
+		// Does this look like an attendee screen?
+		if ( empty( $_GET['page'] ) || 'tickets-attendees' !== $_GET['page'] ) {
+			return;
+		}
+
+		// Execute once only
+		if ( $this->assets_enqueued++ ) {
+			return;
+		}
+
+		$this->assets();
+	}
+
+	protected function assets() {
 		wp_enqueue_style(
 			'attendee-data-editor-styles',
 			$this->plugin_url . 'src/styles/attendee-data-editor.css'
